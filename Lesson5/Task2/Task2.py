@@ -17,7 +17,7 @@ def game(count: int, maxitems: int, computer: bool):
     gamer = random.randint(0, 10) % 2   #случайно выбираем кто ходит первым
 
     n = 0
-    while count:
+    while True:
         if gamer and computer:
             n = computer_input(count, maxitems)
         else:
