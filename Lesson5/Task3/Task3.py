@@ -3,7 +3,8 @@
 import random
 
 
-#
+# Основной метод приложения. computer = True - игра с компьютером.
+# computer = False - игра с человеком.
 def Game(computer : bool):
     Names = NamesInput(computer) 
     board = [[0 for x in range(0, 3)] for y in range(0, 3)]    
@@ -85,7 +86,7 @@ def NamesInput(computer : bool):
 
 # Проверка выигрышной ситуации
 def CheckWin(board : list):
-    for i in range(0, 3):
+    for i in range(0, 3): #поле небольшое 3 х 3 поэтому делаем проверку "в лоб"
         if board[i][0] == board[i][1] == board[i][2] != 0  or board[0][i] == board[1][i] == board[2][i] != 0:
             return True
     if board[0][0] == board[1][1] == board[2][2] != 0 or board[0][2] == board[1][1] == board[2][0] != 0:
